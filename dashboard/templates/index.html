@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>📧 Gmail Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>📧 Gmail Dashboard</h2>
+
+    <form class="filter-box">
+        <input name="q" placeholder="🔍 Search email...">
+
+        <select name="status">
+            <option value="">All Status</option>
+            <option value="Read">Read</option>
+            <option value="Unread">Unread</option>
+        </select>
+
+        <select name="spam">
+            <option value="">All Type</option>
+            <option value="Spam">Spam</option>
+            <option value="Authentic">Authentic</option>
+        </select>
+
+        <select name="attach">
+            <option value="">All Files</option>
+            <option value="Yes">Attachment</option>
+            <option value="No">No Attachment</option>
+        </select>
+
+        <button type="submit">Apply Filter</button>
+    </form>
+
+    <div class="table-box">
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Sender</th>
+                    <th>Subject</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Status</th>
+                    <th>Spam</th>
+                    <th>Attach</th>
+                    <th>Summary</th> <!-- 🔥 BACK -->
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for e in emails %}
+                <tr>
+                    <td>{{ e["Sender"] }}</td>
+                    <td>{{ e["Subject"] }}</td>
+                    <td>{{ e["Date"] }}</td>
+                    <td>{{ e["Time"] }}</td>
+
+                    <td class="{{ e['Read/Unread'] }}">
+                        {{ e["Read/Unread"] }}
+                    </td>
+
+                    <td>{{ e["Spam/Authentic"] }}</td>
+                    <td>{{ e["Attachment"] }}</td>
+
+                    <!-- 🔥 SUMMARY SHOW -->
+                    <td class="summary">
+                        {{ e["Summary"] }}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+</div>
+
+</body>
+</html>

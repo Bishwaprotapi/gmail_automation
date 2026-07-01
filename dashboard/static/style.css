@@ -1,0 +1,193 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* 🔥 BODY BACKGROUND */
+body {
+    background: linear-gradient(135deg, #4f5bd5, #5a6fd8, #6a82fb);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* TITLE */
+h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+/* 🔥 FILTER BOX (GLASS EFFECT) */
+.filter-box {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+}
+
+.filter-box input,
+.filter-box select {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* BUTTON */
+.filter-box button {
+    padding: 10px 18px;
+    background: #ff7a00;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-box button:hover {
+    background: #e96b00;
+}
+
+/* 🔥 TABLE CARD */
+.table-box {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    min-width: 1200px;
+    border-collapse: collapse;
+}
+
+/* HEADER */
+thead {
+    background: #4b4fa1;
+    color: white;
+}
+
+thead th {
+    padding: 14px;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* ROWS */
+tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: 0.2s;
+}
+
+tbody tr:hover {
+    background: #f5f5f5;
+}
+
+/* CELLS */
+td {
+    padding: 12px;
+    font-size: 15px;
+    vertical-align: top;
+}
+
+/* 🔥 COLUMN WIDTH CONTROL */
+
+/* Sender */
+td:nth-child(1), th:nth-child(1) {
+    width: 230px;
+    word-break: break-all;
+}
+
+/* Subject */
+td:nth-child(2), th:nth-child(2) {
+    width: 230px;
+}
+
+/* Date */
+td:nth-child(3), th:nth-child(3) {
+    width: 110px;
+}
+
+/* Time */
+td:nth-child(4), th:nth-child(4) {
+    width: 110px;
+}
+
+/* Status */
+td:nth-child(5), th:nth-child(5) {
+    width: 90px;
+}
+
+/* Spam */
+td:nth-child(6), th:nth-child(6) {
+    width: 100px;
+}
+
+/* Attach */
+td:nth-child(7), th:nth-child(7) {
+    width: 100px;
+}
+
+/* 🔥 SUMMARY BIG */
+td:nth-child(8), th:nth-child(8) {
+    width: 500px;
+}
+
+/* SUMMARY TEXT */
+.summary {
+    font-size: 15px;
+    line-height: 1.6;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+/* SCROLLBAR */
+.summary::-webkit-scrollbar {
+    width: 6px;
+}
+
+.summary::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 5px;
+}
+
+/* STATUS COLORS */
+td.Read {
+    color: green;
+    font-weight: bold;
+}
+
+td.Unread {
+    color: red;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    table {
+        min-width: 1000px;
+    }
+
+    .filter-box {
+        flex-direction: column;
+        align-items: center;
+    }
+}
